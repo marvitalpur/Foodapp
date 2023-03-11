@@ -28,8 +28,6 @@ const GreyInput = ({
     <>
       <TextInput
         placeholder={placeholder}
-        value={text}
-        onChangeText={text => onChangeHandler(text, formKey)}
         activeUnderlineColor="transparent"
         underlineColor="transparent"
         selectionColor="#000"
@@ -42,7 +40,7 @@ const GreyInput = ({
           // fontFamily: Fonts.default,
           fontWeight: '400',
           height: height,
-          opacity: text.length < 1 ? 0.5 : 1,
+          // opacity: text.length < 1 ? 0.5 : 1,
           fontSize: 14,
           borderRadius: 10,
           backgroundColor: Colors.primary,

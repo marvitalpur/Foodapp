@@ -37,16 +37,16 @@ const HomeScreen = ({navigation}) => {
         <View style={{flex: 1, marginTop: 15, paddingHorizontal: 25}}>
           <SearchbarCompo />
         </View>
-        <View style={{flex: 1, marginTop: 15, paddingHorizontal: 25}}>
+        <View style={{flex: 1}}>
           <ButtonComponent
             button3
             buttonText="Add Meal"
-            paddingHorizontal={WIDTH < 375 ? 5 : 25}
+            // paddingHorizontal={WIDTH < 375 ? 5 : 5}
             icon="arrow-right"
             onPress={() => navigation.navigate('AddMealScreen')}
             widthIcon={WIDTH < 375 ? 40 : 40}
             height={WIDTH < 375 ? 40 : 40}
-            width={WIDTH < 375 ? 370 : 370}
+            width={'90%'}
           />
         </View>
         <View style={{flex: 1, marginTop: 15, paddingHorizontal: 25}}>
