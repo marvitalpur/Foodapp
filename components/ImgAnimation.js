@@ -3,25 +3,25 @@ import React, { useState, useEffect } from 'react';
 import { WIDTH } from '../assets/constants/Dimensions';
 
 const ImgAnimation = ({ Food1, Food2 }) => {
-  // let rotateValueHolder = new Animated.Value(0);
+  let rotateValueHolder = new Animated.Value(0);
 
-  // const startImageRotateFunction = () => {
-  //   rotateValueHolder.setValue(0);
-  //   Animated.timing(rotateValueHolder, {
-  //     toValue: 1,
-  //     duration: 500,
-  //     easing: Easing.linear,
-  //     useNativeDriver: false,
-  //   }).start(() => startImageRotateFunction());
-  // };
+  const startImageRotateFunction = () => {
+    // rotateValueHolder.setValue(0);
+    // Animated.timing(rotateValueHolder, {
+    //   toValue: 1,
+    //   duration: 50,
+    //   easing: Easing.linear,
+    //   useNativeDriver: false,
+    // }).start(() => startImageRotateFunction());
+  };
 
   // const RotateData = rotateValueHolder.interpolate({
   //   inputRange: [1, 1],
   //   outputRange: ['0deg', '360deg'],
   // });
-  // const position = new Animated.ValueXY({x: 0, y: 0});
-  // const position1 = new Animated.ValueXY({x: 0, y: 0});
-  // const [animation] = useState(new Animated.Value(0));
+  const position = new Animated.ValueXY({x: 0, y: 0});
+  const position1 = new Animated.ValueXY({x: 0, y: 0});
+  const [animation] = useState(new Animated.Value(0));
 
   // useEffect(() => {
   //   Animated.spring(position, {
@@ -55,32 +55,32 @@ const ImgAnimation = ({ Food1, Food2 }) => {
   //   console.log(animation.ValueXY);
   // }, []);
 
-  // useEffect(() => {
-  //   Animated.timing(animation, {
-  //     toValue: 0.6,
-  //     duration: 9000,
-  //     useNativeDriver: true,
-  //   }).start();
-  // }, []);
+  useEffect(() => {
+    Animated.timing(animation, {
+      toValue: 0.6,
+      duration: 9000,
+      useNativeDriver: true,
+    }).start();
+  }, []);
 
-  // const rotate = animation.interpolate({
-  //   inputRange: [1, 1],
-  //   outputRange: ['360deg', '0deg'],
-  // });
-  // const scale = animation.interpolate({
-  //   inputRange: [1, 1],
-  //   outputRange: [2, 2],
-  // });
-  // const animatedStyle = {
-  //   transform: [{rotate}, {scaleY: 1}],
-  // };
+  const rotate = animation.interpolate({
+    inputRange: [1, 1],
+    outputRange: ['360deg', '0deg'],
+  });
+  const scale = animation.interpolate({
+    inputRange: [1, 1],
+    outputRange: [2, 2],
+  });
+  const animatedStyle = {
+    transform: [{rotate}, {scaleY: 1}],
+  };
 
-  // useEffect(() => {
-  //   startImageRotateFunction();
-  //   setTimeout(() => {
-  //     // navigation.replace('login');
-  //   }, 3000);
-  // }, []);
+  useEffect(() => {
+    startImageRotateFunction();
+    setTimeout(() => {
+      // navigation.replace('login');
+    }, 3000);
+  }, []);
 
   return (
     <>
@@ -98,14 +98,14 @@ const ImgAnimation = ({ Food1, Food2 }) => {
           style={{
             paddingLeft: 30,
             paddingLeft: 30,
-            // transform: [{translateY: position.y}],
+            transform: [{translateY: position.y}],
           }}>
           <Animated.Image
             source={Food1}
             resizeMode="contain"
             style={[
               { width: '100%' },
-              // animatedStyle
+              animatedStyle
             ]}
           />
         </Animated.View>
@@ -121,7 +121,7 @@ const ImgAnimation = ({ Food1, Food2 }) => {
         <Animated.View
           style={{
             paddingLeft: 30,
-            // transform: [{translateY: position1.y}]
+            transform: [{translateY: position1.y}]
           }}>
           <Animated.Image
             source={Food2}

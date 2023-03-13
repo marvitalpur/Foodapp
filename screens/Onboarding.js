@@ -129,6 +129,7 @@ const Onboarding = ({ navigation }) => {
       setCurrentSlideIndex(currentSlideIndex - 1);
     }
   };
+  
   return (
     <>
       <FlatList
@@ -245,7 +246,7 @@ const Slide = ({ item }) => {
             </>
           ) : item.id === 2 ? (
             <>
-              <Text
+              <Animated.Text
                 style={[
                   styles.title,
                   { color: Colors.primary, lineHeight: HEIGHT < 700 ? 40 : 55 },
@@ -253,7 +254,7 @@ const Slide = ({ item }) => {
                 numberOfLines={2}
                 adjustsFontSizeToFit>
                 Add your meal & meal planner
-              </Text>
+              </Animated.Text>
             </>
           ) : item.id === 3 ? (
             <>
@@ -388,7 +389,7 @@ const Indicators = ({
             button1
             SvgICon
             buttonText="Lets Start"
-            paddingHorizontal={WIDTH < 375 ? 5 : 5}
+            paddingHorizontal={WIDTH < 375 ? 12 : 5}
             icon="arrow-right"
             buttonColor={Colors.primary}
             textColor={Colors.secondary}

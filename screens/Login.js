@@ -74,8 +74,22 @@ const Login = ({ navigation }) => {
                 // top: -140,
               }
             }>
-            <ImgAnimation Food1={Assets.FoodItems.fooditem6} />
-            <ImgAnimation Food2={Assets.FoodItems.FoodItem1} />
+            <Image source={Assets.FoodItems.fooditem6} resizeMode="contain" style={{
+              width: 300,
+              height: 300,
+              position: 'absolute',
+              // right: -110,
+              // right: 10,
+              left: -60,
+              top: -90,
+            }} />
+            <Image source={Assets.FoodItems.FoodItem1} style={{
+              width: 150,
+              height: 150,
+              position: 'absolute',
+              right: -250,
+              top: 280,
+            }} />
             {/* <Image source={item.Food1} resizeMode="contain" /> */}
           </View>
         </View>
