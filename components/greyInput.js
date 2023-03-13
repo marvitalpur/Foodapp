@@ -45,6 +45,7 @@ const GreyInput = ({
           borderRadius: 10,
           backgroundColor: Colors.primary,
           shadowColor: Colors.tertiary,
+
           shadowOffset: {
             width: 0,
             height: 7,
